@@ -11,7 +11,7 @@ COLUMNS_OPTION2 = ['Start 2', 'End 2']
 COLUMNS_OPTION3 = ['Start 3', 'Middle 3', 'End 3']
 COLUMNS_OPTION4 = ['Start 4', 'Middle 4', 'End 4']
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 def get_sheets_csv_link(sheets_link, sheets_name):
@@ -30,7 +30,12 @@ def generate_title():
     return title
 
 
-@app.route("/")
+@application.route("/")
 def title_generator():
     generated_title = generate_title()
     return render_template('book_titles.html', generated_title=generated_title)
+
+
+if __name__ == "__main__":
+    application.debug = True
+    application.run()
