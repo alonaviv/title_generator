@@ -11,7 +11,7 @@ COLUMNS_OPTION2 = ['Start 2', 'End 2']
 COLUMNS_OPTION3 = ['Start 3', 'Middle 3', 'End 3']
 COLUMNS_OPTION4 = ['Start 4', 'Middle 4', 'End 4']
 
-application = Flask(__name__)
+application = server = Flask(__name__, static_url_path="", static_folder="static")
 
 
 def get_sheets_csv_link(sheets_link, sheets_name):
