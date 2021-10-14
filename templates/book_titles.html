@@ -2,14 +2,20 @@
 <html dir="rtl" lang="he">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>מחולל כותרות ספרי ילדים</title>
 </head>
 <body>
-<h1>ברוכים הבאים למחולל כותרות ספרי הילדים של נונה!</h1>
+    <a href="{{ url_for('title_generator') }}">
+    <div class="border" >
+        <div class="image">
+            <img src="{{url_for('static', filename='nona.png')}}">
+        </div>
+        <div class="title">
+            <p>{{ generated_title }}</p>
+        </div>
+    </div>
+    </a>
 
-<br><br>
-<h2>{{generated_title}}</h2>
-<br>
-<a href="{{ url_for('title_generator') }}">כותרת נוספת בבקשה!</a>
 </body>
 </html>
